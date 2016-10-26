@@ -1,0 +1,11 @@
+<ul id="todo-list">
+    <li>
+        {{#link-to 'items.info' item}}
+        	<span>{{item.name}}</span>
+        {{/link-to}}
+        {{#link-to 'items.edit'}}
+        <button type="button" class="edit"></button>{{/link-to}}
+        <button type="button" class="delete" {{action 'deleteItem' item}}></button>
+        {{#link-to 'orders.new' item.id}}<button type="button" class="order">Order</button>{{/link-to}}
+    </li>
+</ul>

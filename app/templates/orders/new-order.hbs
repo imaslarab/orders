@@ -1,0 +1,24 @@
+<div class="add-page">
+  <h2>Order Here</h2>
+	<form {{action 'createNewOrder' order on="submit"}}>
+	{{!-- <form> --}}
+	  <label>Customer Name: </label>
+	  {{input value=order.customerName placeholder="Enter Your Name"}}<br><br>
+
+	  <label>Select Item: </label>
+	  <select onchange={{action 'selectItem' value="target.value"}}>
+	  {{!-- <select onchange={{action 'hello'}}> --}}
+	  	<option>Select Item</option>
+	  	{{#each items as |item|}}
+	  	<option value={{item.id}}>{{item.name}}</option>
+	  	{{/each}}
+	  </select>
+	  <br><br>
+
+	  <label>Quantity: </label>
+	  {{input value=order.quantity placeholder="Enter the quantity" }}<br><br>
+	  
+	  {{input type="submit" value="Submit"}}
+	</form>
+
+</div>

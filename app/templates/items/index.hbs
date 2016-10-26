@@ -1,0 +1,12 @@
+<div class="adding-todo">
+    {{input id="todo" type="text" placeholder="Items here"}}
+    {{#link-to 'items.new'}}
+        <input class="add" type="button" />
+    {{/link-to}}
+    {{#link-to 'orders.new-order'}}
+        <button class="order">New Order</button>
+    {{/link-to}}
+</div>
+{{#each model as |item|}}
+  {{item-list item=item}}
+{{/each}}

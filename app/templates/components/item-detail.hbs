@@ -1,0 +1,24 @@
+<form>
+  <label>Title: </label>
+  <span>{{item.name}}</span><br><br>
+
+  <label>Description: </label>
+  <span>{{item.description}}</span><br><br>
+
+  <label>Category: </label>
+  <span>{{item.category}}</span><br><br>
+
+  <label>Customers: </label>
+  <span>
+  {{#each item.orders as |order|}}
+  	{{order.customerName}},
+  {{/each}}
+  {{!-- {{totalCustomers}} --}}
+  </span><br><br>
+
+  <label>Total Orders: </label>
+  <span>{{totalOrders}}</span><br><br>
+
+  {{#link-to 'items.index'}}<input type="submit" value="Go-Back">{{/link-to}}
+</form>
+
